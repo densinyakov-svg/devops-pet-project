@@ -23,6 +23,9 @@ jobs:
       - name: Run tests
         run: pytest
 
+      - name: Debug Docker username
+        run: echo "Username is '${{ secrets.DOCKER_USERNAME }}'"
+
       - name: Build Docker image
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/devops-demo:latest .
 
